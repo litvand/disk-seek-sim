@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Disk scheduler</title>
+        <script src="js/sim.js"></script>
+        <script src="js/gui.js"></script>
+        <script src="js/draw.js"></script>
+    </head>
+    <body onload="updateGUI()">
+        <canvas id="myCanvas" width="800" height="200"></canvas>
+        <br/>
+
+        <div style="display: inline-block; width: 80px;">Sectors:</div> 
+        <input size=50 type="text" id="sectors" value="" oninput="updateGUI()">
+        <br/>
+
+        <div style="display: inline-block; width: 80px;">Method:</div>
+        <input type="radio" name="method" onclick="updateGUI()" value="fcfs" checked="checked">
+        FCFS
+        <input type="radio" name="method" onclick="updateGUI()" value="sstf">
+        SSTF
+        <input type="radio" name="method" onclick="updateGUI()" value="scan">
+        SCAN
+        <input type="radio" name="method" onclick="updateGUI()" value="clook">
+        C-LOOK
+        <br/>
+        <br/>
+
+        <div style="display: inline-block; width: 80px;">Examples:</div>
+        <button onclick="setExample(0)" id="example0">1,10,44,2,12,3,13,20</button>
+        &nbsp;&nbsp;
+        <button onclick="setExample(1)" id="example1">2,6,10,14,18,1</button>
+        &nbsp;&nbsp;
+        <button onclick="setExample(2)" id="example2">12,5,12,7,7,10,11,7,9,14</button>
+    </body>
+</html>
